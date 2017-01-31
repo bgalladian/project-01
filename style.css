@@ -1,9 +1,10 @@
 h1, p {
   text-align: center;
+  font-family: 'Roboto';
 }
 
 body {
-  font-family: helvetica, times, serif;
+  font-family: 'Roboto';
   font-size: 14px;
   margin: 0;
   display: block;
@@ -12,6 +13,7 @@ body {
 
 }
 body #content {
+  font-family: 'Roboto';
   position: relative;
   display: block;
   width: 100%;
@@ -25,11 +27,13 @@ body #content {
 
 }
 body #content h1 {
+  font-family: 'Roboto';
   margin: 0;
   padding: 15px;
   text-align: center;
 }
 body #content #myBtn {
+  font-family: 'Roboto';
   color: white;
   background: blue;
   border: 3px solid white;
@@ -49,11 +53,13 @@ body #content #myBtn {
   right: 0;
 }
 body #content #myBtn:hover {
+  font-family: 'Roboto';
   background: white;
   color: red;
   cursor: pointer;
 }
 body #content label {
+  font-family: 'Roboto';
   display: block;
   font-size: 1.5em;
   width: 25%;
@@ -64,6 +70,7 @@ body #content #quiz {
   position: relative;
 }
 body #content #quiz .total {
+  font-family: 'Roboto';
   display: block;
   margin: 0 auto;
   width: 100%;

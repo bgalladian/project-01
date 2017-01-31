@@ -1,16 +1,17 @@
 
-//code was taken from various places all over the internet, and some of my books//
+//code was developed by myself, and various sources around the internet//
 
 //quiz questions//
 var allQuestions = [
     {
         question: "How many stars are on the flag?",
         choices: ["49", "51", "50", "52" ],
-        correctAnswer: 3
+        correctAnswer: 2
+
     },
     {
         question: "What is the supreme law of the land?",
-        choices: ["President", "Congress", "Constituion", "Supreme Court"],
+        choices: ["President", "Congress", "Constitution", "Supreme Court"],
         correctAnswer: 2
     },
     {
@@ -92,7 +93,7 @@ function askQuestion () {
     }
 }
 
-
+//function to check score/tally//
 function lookForChecked() {
 
     if (radioButtons.length > 1) {
@@ -106,10 +107,18 @@ function lookForChecked() {
                 var index = [i];
                 if (i === allQuestions[currentQuestion].correctAnswer) {
                     tally++;
+                    alert("That is correct");
 
                 }
+
+                if (i !== allQuestions[currentQuestion].correctAnswer) {
+                  alert("That is incorrect");
+
+                }
+
                 if (currentQuestion < allQuestions.length -1) {
                     currentQuestion++;
+
 
                 } else {
                     alert('End of quiz');
