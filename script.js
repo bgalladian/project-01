@@ -2,6 +2,7 @@
 //code was developed by myself, and various sources around the internet//
 
 //quiz questions//
+// great use of data structures and semantic variable / property naming to organize your questions
 var allQuestions = [
     {
         question: "How many stars are on the flag?",
@@ -69,10 +70,13 @@ var index = 0;
 
 
 //function to start quiz//
+// maybe rename this function to something more semantic like 'showIntro'
 function firstFunc() {
     if (currentQuestion === 0) {
         submitBtn.value = "Click Here to Start";
     }
+// good job manipulating existing DOM elements instead of removing / replacing them
+// (makes for DRYer code)
 }
 
 //function to ask the questions//
@@ -95,44 +99,34 @@ function askQuestion () {
 
 //function to check score/tally//
 function lookForChecked() {
-
     if (radioButtons.length > 1) {
-
-            var checked = false;
-        for (var i = 0; i < radioButtons.length; i++) {
+          var checked = false; // I don't think this variable is being used. Make sure to clean up your code of unused variables / functions before deploying
+          for (var i = 0; i < radioButtons.length; i++) { // Good use of for loop to evaluate user selection via radio buttons
             var selection = radioButtons[i];
-
              if (selection.checked) {
-
                 var index = [i];
+                // If you wanted to make your code more modular, you could abstract some of this out into a checkAnswer() function
                 if (i === allQuestions[currentQuestion].correctAnswer) {
-                    tally++;
-                    alert("That is correct");
-
-                }
-
-                if (i !== allQuestions[currentQuestion].correctAnswer) {
+                  tally++;
+                  alert("That is correct");
+                } else if (i !== allQuestions[currentQuestion].correctAnswer) { // if two conditionals are related, like here, use an 'else if' to have them run sequentially
                   alert("That is incorrect");
-
                 }
-
+                // Same here, could be abstracted into a checkForCompletion() function to make your code more modular
                 if (currentQuestion < allQuestions.length -1) {
                     currentQuestion++;
-
-
                 } else {
                     alert('End of quiz');
-                    calcQuiz();
-                   return false;
+                    calcQuiz(); // Good modularization here
+                   return false; // Is this boolean return value being used? If not, remove it
                 }
-                break;
             }
         }
-        if ($('input[name="radioOption"]:checked').length < 1) {
+        if ($('input[name="radioOption"]:checked').length < 1) { // GREAT use of advanced CSS selectors to evaluate whether a radio button is checked or not
             alert('Please Make a Selection');
         }
     }
-        askQuestion();
+    askQuestion(); // Good modularization by separating this functionality into a separate function that can be reused and called when needed, like here
 }
 
 
@@ -143,5 +137,5 @@ function calcQuiz() {
 }
 
 //to load and listen for button click//
-window.onload = firstFunc();
+window.onload = firstFunc(); // Great example here of ensuring the whole DOM is loaded before triggering functionaltiy
 submitBtn.addEventListener('click', lookForChecked);
