@@ -1,10 +1,13 @@
 h1, p {
   text-align: center;
-  font-family: 'Roboto';
 }
 
 body {
   font-family: 'Roboto';
+  /*since you've set the font-family on the body, you don't need to set it again
+  anywhere else in the DOM. Since the body is the parent element of all DOM elements
+  on the screen, they will inherit this font property automatically (DRY). Look to
+  see if there are other properties here that you may have repeated unneccessarily. */
   font-size: 14px;
   margin: 0;
   display: block;
@@ -13,7 +16,6 @@ body {
 
 }
 body #content {
-  font-family: 'Roboto';
   position: relative;
   display: block;
   width: 100%;
@@ -21,19 +23,22 @@ body #content {
   margin: 0 auto;
   background-image: url("https://www.americandisposal.com/uploads/images/Flag.jpg");
   background-size: cover;
+  background-position: center;
+  /*this property will keep the flag center even on resize*/
   min-height: 450px;
   color: white;
   text-shadow: -1.5px 0 black, 0 1.5px black, 1.5px 0 black, 0 -1.5px black;
 
 }
 body #content h1 {
-  font-family: 'Roboto';
   margin: 0;
   padding: 15px;
   text-align: center;
 }
+/*Perhaps implement flexbox and media query here for #content and make your positioning of quiz
+more dynamic (ie when screen is wide, question and button on left and options on right of #content,
+ when screen is resized in, they stack like they are now)*/
 body #content #myBtn {
-  font-family: 'Roboto';
   color: white;
   background: blue;
   border: 3px solid white;
@@ -53,13 +58,12 @@ body #content #myBtn {
   right: 0;
 }
 body #content #myBtn:hover {
-  font-family: 'Roboto';
   background: white;
   color: red;
   cursor: pointer;
 }
+/*Nice hover and cursor effects!*/
 body #content label {
-  font-family: 'Roboto';
   display: block;
   font-size: 1.5em;
   width: 25%;
@@ -70,7 +74,6 @@ body #content #quiz {
   position: relative;
 }
 body #content #quiz .total {
-  font-family: 'Roboto';
   display: block;
   margin: 0 auto;
   width: 100%;

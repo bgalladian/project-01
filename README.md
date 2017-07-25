@@ -1,5 +1,7 @@
 # US Citizenship Quiz
 Repository for our first project
+<!-- Give your app a name and change the main header to that name. Also mention in the subheader
+what this is the first project for (WDI) -->
 
 #Description
 This is a very short quiz for helping with the US citizenship test.  Here are the things it can do:
@@ -26,5 +28,7 @@ I want to continue building on this project to include the following:
   1. Have the entire test for the US citizenship test
   2. Be able to get location to load up answers for local questions (i.e Who is your congressman/senator?)
 
+Good readme, contains all relevant parts and gives solid evidence of planning. However, in the conclusion below, take out the parts about your javascript being weak at the moment. Your code is actually quite solid
+for a beginner. Leave the parts about where you got inspiration and examples from. Overall great job man. 
 
 .
